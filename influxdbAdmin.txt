@@ -1,0 +1,36 @@
+// debug influxdb
+tail -f /var/log/influxdb/influxdb.log
+
+SHOW RETENTION POLICIES ON "metrics"
+
+# new default retention policy
+CREATE RETENTION POLICY two_hours ON metrics DURATION 2h REPLICATION 1 DEFAULT
+DROP RETENTION POLICY two_hours on metrics
+
+# minimum duration 1 hr
+CREATE RETENTION POLICY onehour ON metrics DURATION 1h REPLICATION 1 DEFAULT
+
+# second rp will hold 15min avg for a day
+CREATE RETENTION POLICY oneday ON metrics DURATION 1d REPLICATION 1
+
+// ! must wait >15m before before first cq call
+CREATE CONTINUOUS QUERY cq_mean_15m ON metrics BEGIN SELECT mean(value) AS mean15m INTO metrics."oneday".daily_used_total FROM used WHERE memory='total' GROUP BY time(15m) END
+CREATE CONTINUOUS QUERY cq_max_15m  ON metrics BEGIN SELECT max(value) AS max15m   INTO metrics."oneday".daily_used_total FROM used WHERE memory='total' GROUP BY time(15m) END
+CREATE CONTINUOUS QUERY cq_min_15m  ON metrics BEGIN SELECT max(value) AS min15m   INTO metrics."oneday".daily_used_total FROM used WHERE memory='total' GROUP BY time(15m) END
+SHOW CONTINUOUS QUERIES
+DROP CONTINUOUS QUERY cq_mean_15m ON metrics
+
+## oneweek
+* create new 7 day "oneweek" RP that will hold 15min min,max,avg
+* migrate oneday data to oneweek
+
+CREATE RETENTION POLICY oneweek ON metrics DURATION 1w REPLICATION 1
+// clean up
+DROP RETENTION POLICY "default" ON metrics
+CREATE CONTINUOUS QUERY cq_oneweek_onehour_mean_15m ON metrics BEGIN SELECT mean(value) AS mean15m INTO metrics."oneweek".mem_totals FROM used WHERE memory='total' GROUP BY time(15m) END
+CREATE CONTINUOUS QUERY cq_oneweek_onehour_max_15m  ON metrics BEGIN SELECT max(value)  AS max15m  INTO metrics."oneweek".mem_totals FROM used WHERE memory='total' GROUP BY time(15m) END
+CREATE CONTINUOUS QUERY cq_oneweek_onehour_min_15m  ON metrics BEGIN SELECT min(value)  AS min15m  INTO metrics."oneweek".mem_totals FROM used WHERE memory='total' GROUP BY time(15m) END
+SELECT * INTO metrics.oneweek.used_total FROM metrics."oneday".daily_used_total
+
+
+CREATE CONTINUOUS QUERY cq_oneweek_onehour_committed_mean_15m ON metrics BEGIN SELECT mean(value) AS comitted_mean15m INTO metrics."oneweek".mem_totals FROM comitted WHERE memory='total' GROUP BY time(15m) END

@@ -1,0 +1,353 @@
+<codeTemplateLibrary version="3.4.1">
+  <id>57b8a32d-f67b-4a2d-a097-955cf1e8e5f6</id>
+  <name>METRIX_REPORT_V1.0</name>
+  <revision>10</revision>
+  <lastModified>
+    <time>1467814335622</time>
+    <timezone>Europe/Paris</timezone>
+  </lastModified>
+  <description>METRIX_V1.0
+
+metered and influxdb-reporter channels</description>
+  <includeNewChannels>false</includeNewChannels>
+  <enabledChannelIds>
+    <string>ba726dd2-08ec-4940-8323-0a93c93222df</string>
+    <string>404a72e6-bc10-4702-8fd8-9f1d396692f6</string>
+    <string>30aab292-0216-4071-b694-75f6c6bcaac3</string>
+  </enabledChannelIds>
+  <disabledChannelIds>
+    <string>e5a8bfe7-a8ce-4667-981d-0d6958bab686</string>
+    <string>f834afd2-3e10-4ccb-939d-a040446c3f22</string>
+    <string>9138fc47-94e6-4400-8a75-45cfc7180ffb</string>
+    <string>91c02c09-3443-4351-9cc3-a0968ef46aca</string>
+    <string>294e854e-98a5-443c-93e7-ded71b74f9e2</string>
+    <string>6da74c56-9bba-4e5c-b125-afba1b7b6652</string>
+    <string>1d99b50a-06b6-4849-a046-4d4f36c889f3</string>
+    <string>e834292b-f98a-4902-8d51-d5fe48abb2dc</string>
+    <string>a7df9c79-72c8-4ed5-8e68-ee5dde28bf82</string>
+    <string>e7ea90b3-d5cd-4a05-b8a0-cd392f258a0c</string>
+    <string>ddffee55-a646-408f-8935-6df425021446</string>
+    <string>0cc739df-420b-4bcd-8906-73cb33b19613</string>
+    <string>bb07b7d0-f0bc-473f-9b5f-1150efea714a</string>
+    <string>4709b192-23fa-4444-88b4-4bc881af48d2</string>
+    <string>f95effed-2e41-4002-8296-84466ad6de59</string>
+    <string>0604f552-c541-409e-a4ee-b4a63482df06</string>
+    <string>5eac269d-a22d-438e-98e6-b00522b90d66</string>
+    <string>a0fa340e-916d-4674-9f63-4c2598bef491</string>
+    <string>2af7ba02-310f-4c5c-be4a-35429d983aee</string>
+    <string>ca061274-95c7-4eb2-9454-dd743b03751b</string>
+    <string>b94f732e-56e0-4de1-85b1-e9c08e0a56bf</string>
+    <string>53ca52c5-f1af-4099-abf4-d1223fadf28b</string>
+    <string>296c84ab-487b-4f3d-bac1-64676486657f</string>
+    <string>45b7ffd0-5a40-42a2-96ce-dc926e556778</string>
+    <string>b7e7f500-0762-4a90-935a-23365f8cb71c</string>
+    <string>c87a3af4-2e93-4122-8365-b2d986892742</string>
+    <string>4fd9544c-a2f6-4da8-aac9-b57b4645b15a</string>
+    <string>39cfbd3b-a65f-47b8-8269-b1156d156635</string>
+    <string>6958d199-a71c-4d5c-a0a2-f009cba65191</string>
+    <string>9e3d92de-0992-4414-a1e1-3f3678c26a2f</string>
+    <string>62c907b1-bfdb-47cc-b70c-5e6c20c2bcfb</string>
+    <string>9978d43e-16ab-40c5-a46a-6a1ed386be2c</string>
+    <string>aa929505-338e-460d-bf76-fe860e343419</string>
+    <string>cd67986e-a12f-4bb3-9aba-f508b6194655</string>
+    <string>8c87d4eb-7894-4530-94f7-a398a9daefad</string>
+    <string>ba84b33e-5b85-4b95-8c38-7f348154f8b4</string>
+    <string>0e07ccd4-5889-4c46-9024-e788cf3be5d0</string>
+    <string>b78a39d9-daf7-4259-80e6-a10a31a63c57</string>
+    <string>96425fdd-5df9-4224-8c25-80f668d68ede</string>
+    <string>5fcaaa58-473a-4d2e-9d0e-0869fbff3dbd</string>
+    <string>ff608456-3a58-43f0-ba95-176b117bd981</string>
+    <string>a14310e1-015b-466a-bd30-f0724315ccc5</string>
+    <string>f4203406-84d8-4dc9-934c-147ae0a47e48</string>
+    <string>1c1c9668-b086-44c0-9078-cc7e1d9e33a7</string>
+    <string>713aba68-85c8-43ab-8bdd-a82ba2ae1464</string>
+    <string>2da47eb6-c3b1-4c4b-8e14-2471b6b7ab18</string>
+    <string>7f5476d0-d9de-4fa8-9aca-43aa54775499</string>
+  </disabledChannelIds>
+  <codeTemplates>
+    <codeTemplate version="3.4.1">
+      <id>d1e5e617-25bc-4acd-8ec3-79a2a2b7f354</id>
+      <name>getMetricsRegistry</name>
+      <revision>1</revision>
+      <lastModified>
+        <time>1467812242874</time>
+        <timezone>Europe/Paris</timezone>
+      </lastModified>
+      <type>DRAG_AND_DROP_CODE</type>
+      <contextSet>
+        <delegate>
+          <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+          <contextType>CHANNEL_BATCH</contextType>
+          <contextType>CHANNEL_PREPROCESSOR</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+          <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>CHANNEL_POSTPROCESSOR</contextType>
+          <contextType>CHANNEL_UNDEPLOY</contextType>
+          <contextType>CHANNEL_ATTACHMENT</contextType>
+        </delegate>
+      </contextSet>
+      <code>/**
+anywhere BUT in deployment script of an instrumented channel
+*/
+var mr= METRIX(true).getMetricsRegistry();</code>
+    </codeTemplate>
+    <codeTemplate version="3.4.1">
+      <id>4a8f15ea-9300-40c3-a09c-03af91771db3</id>
+      <name>instrumentedDepoly</name>
+      <revision>3</revision>
+      <lastModified>
+        <time>1467819341261</time>
+        <timezone>Europe/Paris</timezone>
+      </lastModified>
+      <type>DRAG_AND_DROP_CODE</type>
+      <contextSet>
+        <delegate>
+          <contextType>CHANNEL_DEPLOY</contextType>
+        </delegate>
+      </contextSet>
+      <code>/**
+in deployment script of an instrumented channel
+*/
+var 
+	metrix= METRIX(),
+	mr= metrix.getMetricsRegistry(),
+	
+	// influxdbName - define it in configurationMap
+	influxdbName= configurationMap.get(&quot;INFLUXDBNAME::&quot;+channelId)
+				|| configurationMap.get(&quot;INFLUXDBNAME::DEFAULT&quot;) || &quot;metrics&quot;,
+
+	// access to the server must be defined with &quot;INFLUXDB::&lt;influxdbName&gt;&quot; in configurationMap
+	// the value format is &quot;server::port::user::password&quot;
+			
+	reporter= metrix.getInfluxdbReporter(mr, influxdbName)
+	;
+
+metrix.setReporter(reporter);
+
+// init your Metrics - 
+globalChannelMap.put(&quot;h1&quot;, mr.histogram(&quot;histo1&quot;));
+
+/* use it in your code...
+$gc(&quot;h1&quot;).update(0);
+globalChannelMap.get(&quot;h1&quot;).update(0);
+*/
+</code>
+    </codeTemplate>
+    <codeTemplate version="3.4.1">
+      <id>e52cffbe-9e78-4598-aea6-3620b225a28a</id>
+      <name>instrumentedUndeploy</name>
+      <revision>1</revision>
+      <lastModified>
+        <time>1467812387278</time>
+        <timezone>Europe/Paris</timezone>
+      </lastModified>
+      <type>DRAG_AND_DROP_CODE</type>
+      <contextSet>
+        <delegate>
+          <contextType>CHANNEL_UNDEPLOY</contextType>
+        </delegate>
+      </contextSet>
+      <code>/**
+in undeployment script of an instrumented channel
+*/
+METRIX(true).removeReporter();</code>
+    </codeTemplate>
+    <codeTemplate version="3.4.1">
+      <id>ef208490-8496-4739-8c43-78c10d20b44d</id>
+      <name>METRIX</name>
+      <revision>17</revision>
+      <lastModified>
+        <time>1467830406597</time>
+        <timezone>Europe/Paris</timezone>
+      </lastModified>
+      <type>FUNCTION</type>
+      <contextSet>
+        <delegate>
+          <contextType>CHANNEL_DEPLOY</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>CHANNEL_UNDEPLOY</contextType>
+        </delegate>
+      </contextSet>
+      <code>/**
+ * METRIX_V1.0 - for metered and influxdb-reporter channels
+ *
+ * @argument {boolean} [loadFromGCM] - optional, if true then load METRIX from globalChannelMap
+ * @returns METRIX closure - automatically putting it in the globalChannelMap
+ */
+
+function METRIX(loadFromGCM) {
+
+    var GCM_VARIABLE = &quot;METRIX_REPORT_V1.0&quot;, // keep in line with CodeTemplate Library Name
+        REPORTER_OPTIONS= &quot;REPORTER_OPTIONS&quot;,
+        REPORTER_LASTTICK= &quot;REPORTER_LASTTICK&quot;,
+        METRICS_REGISTRY= &quot;METRICS_REGISTRY&quot;,
+        metrix;
+
+    if (loadFromGCM) {
+        metrix = globalChannelMap.get(GCM_VARIABLE);
+    } else {
+        metrix = {
+            ///////////////////////////////////////// reporting to influxdb
+            
+            //////// helpers
+            reporterName: function() {
+                return &quot;REPORTER::&quot; + channelId;
+            },
+
+            //////// instrumented channel methods
+
+		getMetricsRegistry: function(recreate){
+			// the mr is in the globalChannelMap - independent of the closure !
+			var mr= globalChannelMap.get(METRICS_REGISTRY);
+			if (!mr || recreate) {
+				mr= new Packages.com.codahale.metrics.MetricRegistry();
+				globalChannelMap.put(METRICS_REGISTRY, mr);
+			}
+			return mr;
+		},
+
+		getInfluxdbReporter: function(mr, influxdbName, categoriesArray){
+			// builds a InfluxdbReporter
+			var configName= &quot;INFLUXDB::&quot;+influxdbName,
+				// server::port::user::password
+				pattern= /^([0-9a-z\-\.]+)::([0-9]+)::(.+)::(.+)$/i,&#xd;
+				config = configurationMap.get(configName),
+				cp= pattern.exec(config),
+				protocol, args, categories, reporterBuilder, reporter, 
+				serverId= Packages.com.mirth.connect.server.controllers.ConfigurationController.getInstance().getServerId();
+			if( config &amp;&amp; cp !== null ) {
+				
+				protocol= Packages.metrics_influxdb.api.protocols.InfluxdbProtocols
+					.http(cp[1], cp[2], cp[3], cp[4], influxdbName);
+			
+				reporterBuilder= Packages.metrics_influxdb.InfluxdbReporter.forRegistry(mr)
+					.protocol(protocol)
+					.tag(&quot;server&quot;, serverId)
+					.tag(&quot;channel&quot;, channelId);
+				
+				if( Array.isArray(categoriesArray) &amp;&amp; categoriesArray.length&gt;0) {
+					args = categoriesArray.map(function(cat){ return &apos;&quot;&apos;+cat+&apos;&quot;&apos;; }).join(&quot;, &quot;);
+					categories= eval(&quot;new Packages.metrics_influxdb.api.measurements.CategoriesMetricMeasurementTransformer(&quot;+args+&quot;)&quot;);
+					if(categories instanceof Packages.metrics_influxdb.api.measurements.CategoriesMetricMeasurementTransformer) {
+						reporterBuilder.transformer(categories);
+					}
+				}
+		
+				reporter= reporterBuilder.build();&#xd;
+			}
+			else {
+				throw(&quot;Bad or missing server::port::user::password value in configurationMap[&quot;+configName+&quot;]&quot;);
+			}
+			return reporter;
+		},
+
+            setReporter: function(reporter) {
+                // reporter shall implement report() and close() methods
+                globalMap.put(this.reporterName(), reporter)
+            },
+            
+            removeReporter: function() {
+                // cleanup globalMap - used in channel undeploy
+                var reporterName = this.reporterName(),
+                	reporter= globalMap.get(reporterName)
+                	;
+			if (reporter &amp;&amp; reporter.close) {
+				reporter.close();;
+			} else {
+				logger.error(&quot;no close method found for &quot; + reporterName + &quot;. skipping.&quot;)
+			}                
+                globalMap.remove(reporterName);
+            },
+
+
+            //////// reporter channel methods
+            reporterDeploy: function(tick, debug) {
+                //// prepare - used in reporter cahnnel deploy
+                // tick in seconds - will generate a JSON info message every tick
+                tick = tick || 15 * 60;
+                // debug boolean - some logger.debug
+                debug = debug ? true : false;
+
+                var now = new Date().getTime();
+                globalChannelMap.put(REPORTER_OPTIONS, {
+                    start: now,
+                    &quot;debug&quot;: debug,
+                    &quot;tick&quot;: tick * 1000
+                });
+                globalChannelMap.put(REPORTER_LASTTICK, 0);
+            },
+
+            reporterReport: function() {
+                var
+                // REPORTER::channelId
+                regexp = /^REPORTER::[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/,
+                    options = globalChannelMap.get(REPORTER_OPTIONS) || {},
+                    lastTick = globalChannelMap.get(REPORTER_LASTTICK) || 0,
+                    now = new Date().getTime(),
+                    reports = [],
+                    returnValue = java.util.ArrayList();
+
+                globalMap.globalVariableMap.keySet().toArray().forEach(function(key) {
+                    var reporter;
+                    if (regexp.test(key)) {
+                        reporter = globalMap.get(key);
+                        if (reporter &amp;&amp; reporter.report) {
+                            reporter.report();
+                        } else {
+                            logger.error(&quot;no report method found for &quot; + key + &quot;. skipping.&quot;)
+                        }
+                        reports.push(key);
+                        if (options.debug) logger.debug(&quot;reporting &quot; + key);
+                    }
+                });
+
+                if (options.tick) {
+                    if (now - lastTick &gt; options.tick) {
+                        globalChannelMap.put(REPORTER_LASTTICK, now);
+                        returnValue.add(JSON.stringify({
+                            &quot;uptimeHrs&quot;: (now - options.start) / 1000 / 3600,
+                            &quot;tick&quot;: options.tick/1000,
+                            &quot;reports&quot;: reports
+                        }));
+                    } else {
+                        if (options.debug) logger.debug(&quot;just reporting. no tick.&quot;)
+                    }
+                }
+
+                return returnValue;
+            }
+        };
+        globalChannelMap.put(GCM_VARIABLE, metrix);
+    };
+    return metrix;
+}</code>
+    </codeTemplate>
+    <codeTemplate version="3.4.1">
+      <id>6947ff21-6455-447d-99d4-0c9293b1c3d8</id>
+      <name>reporterDeploy</name>
+      <revision>3</revision>
+      <lastModified>
+        <time>1467797237693</time>
+        <timezone>Europe/Paris</timezone>
+      </lastModified>
+      <type>DRAG_AND_DROP_CODE</type>
+      <contextSet>
+        <delegate>
+          <contextType>CHANNEL_DEPLOY</contextType>
+        </delegate>
+      </contextSet>
+      <code>/**
+	reporter - deploy 1 hour tick messages and debug on
+*/
+
+// deploy 1 hour tick messages and debug on
+METRIX().reporterDeploy(3600, true);
+
+/* in in JSON source javascript writer use this code:
+return METRIX(true).reporterReport();
+*/</code>
+    </codeTemplate>
+  </codeTemplates>
+</codeTemplateLibrary>
