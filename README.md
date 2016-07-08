@@ -16,10 +16,10 @@ A dedicated reporting channel executes the report() on
 ## CodeLibrary
 The library handles all using a single closure.
 ### creation
-	metrix=METRIX(false); // or simply METRIX() 
+	metrix=METRIX(});
 returns a new closure and puts it automatically in globalChannleMap.
 ### reuse
-	metrix=METRIX(true);
+	metrix=METRIX();
 gets the closuser from the globalChannleMap
 
 * * *
@@ -31,16 +31,16 @@ does ALL the deployment stuff for a Reporter Channel.
 Use drag-and-drop code block "reporterDeploy"...
 
     // deploy 1 hour tick messages and debug on
-    METRIX().reporterDeploy(3600, true);
+    METRIX({}).reporterDeploy(3600, true);
 
     /* in in JSON source javascript writer  use this code:
-    return METRIX(true).reporterReport();
+    return METRIX().reporterReport();
     */
 
 #### reporterReport()
 use the code from previous comment in the source javascript writer...
 
-    return METRIX(true).reporterReport();
+    return METRIX().reporterReport();
 
 This loops through all reporters and executes a report(). After tick seconds a JSON status message is generated.
 ```
