@@ -16,7 +16,7 @@ A dedicated reporting channel executes the report() on
 ## CodeLibrary
 The library handles all using a single closure.
 ### creation
-	metrix=METRIX(});
+	metrix=METRIX({});
 returns a new closure and puts it automatically in globalChannleMap.
 ### reuse
 	metrix=METRIX();
